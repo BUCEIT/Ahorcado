@@ -296,7 +296,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A15">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="O"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A15ActionPerformed"/>
@@ -304,7 +304,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A16">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="P"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A16ActionPerformed"/>
@@ -312,7 +312,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A17">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="Q"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A17ActionPerformed"/>
@@ -320,7 +320,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A18">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="R"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A18ActionPerformed"/>
@@ -328,7 +328,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A19">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="S"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A19ActionPerformed"/>
@@ -336,7 +336,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A20">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="T"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A20ActionPerformed"/>
@@ -344,7 +344,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A21">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="U"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A21ActionPerformed"/>
@@ -352,7 +352,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A22">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="V"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A22ActionPerformed"/>
@@ -360,7 +360,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A23">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="W"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A23ActionPerformed"/>
@@ -368,7 +368,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A24">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="X"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A24ActionPerformed"/>
@@ -376,7 +376,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A25">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="Y"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A25ActionPerformed"/>
@@ -384,7 +384,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A26">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="text" type="java.lang.String" value="Z"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A26ActionPerformed"/>
@@ -392,7 +392,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="letra_A27">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="letra_A27ActionPerformed"/>
