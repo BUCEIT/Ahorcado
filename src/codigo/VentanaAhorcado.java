@@ -14,10 +14,13 @@ import javax.swing.JButton;
  * @author xp
  */
 public class VentanaAhorcado extends javax.swing.JFrame {
-    
-    String paLabraOculta = "CETYS";
-    int contadorFallos= 0;
-     
+
+    String [] paLabraOculta = {"CETYS",""};
+    int largoArray = paLabraOculta.length;
+    int palabraRamdom = (int) (Math.random()*largoArray);
+    String palabra = paLabraOculta[palabraRamdom];
+    int contadorFallos = 0;
+
     /**
      * Creates new form VentanaAhorcado
      */
@@ -26,47 +29,90 @@ public class VentanaAhorcado extends javax.swing.JFrame {
         //
         dibujaImagen();
     }
-    private void chequeaBoton(JButton boton){
+
+    private void chequeaBoton(JButton boton) {
         chequeaLetra(boton.getText());
         boton.setEnabled(false);
-        
+
     }
-    private void chequeaLetra(String letra){
-        if (paLabraOculta.contains(letra)){
+
+    private void chequeaLetra(String letra) {
+        String auxiliar = palabraGuiones.getText();
+        if (palabra.contains(letra)) {
             //la letra si que esta. Tengo que quitar el guion bajo
             //y ponerla en su lugar
-        }
-        else{
+            for (int i = 0; i < palabra.length(); i++) {
+                if (palabra.charAt(i) == letra.charAt(0)) {
+                    System.out.println(i);
+                    auxiliar = auxiliar.substring(0, 2 * i) + letra
+                            + auxiliar.substring(2 * i + 1);
+                }
+            }
+            palabraGuiones.setText(auxiliar);
+
+        } else {
             //la letra no esta y hat que aumentar el contador de fallos
             //y cambiar la imagen del ahoracado
             contadorFallos++;
-            dibujaImagen();
+
         }
+        dibujaImagen();
     }
-        private void dibujaImagen() {
+
+    private void dibujaImagen() {
         String nombreImagen = "";
-        if (contadorFallos ==0){
-        }
+
+        if (!palabraGuiones.getText().contains("_")) {
+            nombreImagen = "/Imagenes/acertasteTodo.png";
+        } else {
+            switch (contadorFallos) {
+                case 0:
+                    nombreImagen = "/imagenes/ahorcadoinicio.png";
+                    break;
+                case 1:
+                    nombreImagen = "/imagenes/Fallo1.png";
+                    break;
+                case 2:
+                    nombreImagen = "/imagenes/Fallo2.png";
+                    break;
+                 case 3:
+                    nombreImagen = "/imagenes/Fallo3.png";
+                    break;
+                case 4:
+                    nombreImagen = "/imagenes/Fallo4.png";
+                    break;
+                case 5:
+                    nombreImagen = "/imagenes/Fallo5.png";
+                    break;
+                 case 6:
+                    nombreImagen = "/imagenes/Fallo6.png";
+                    break;
+                case 7:
+                    nombreImagen = "/imagenes/fotoFinal.jpeg";
+                    break;
+            }
         switch(contadorFallos){
-            case 0: nombreImagen = "/imagenes/ahorcado_0.png"; break;
-            case 1: nombreImagen = "/imagenes/ahorcado_1.png"; break;
-            case 2: nombreImagen = "/imagenes/ahorcado_2.png"; break;
-            case 3: nombreImagen = "/imagenes/ahorcado_3.png"; break;
-            case 4: nombreImagen = "/imagenes/ahorcado_4.png"; break;
-            case 5: nombreImagen = "/imagenes/ahorcado_5.png"; break;
+            case 0: nombreImagen = "/imagenes/ahorcadoinicio.png"; break;
+            case 1: nombreImagen = "/imagenes/Fallo1.png"; break;
+            case 2: nombreImagen = "/imagenes/Fallo2.png"; break;
+            case 3: nombreImagen = "/imagenes/Fallo3.png"; break;
+            case 4: nombreImagen = "/imagenes/Fallo4.png"; break;
+            case 5: nombreImagen = "/imagenes/Fallo5.png"; break;
+            case 6: nombreImagen = "/imagenes/Fallo6.png"; break;
             default : nombreImagen = "/imagenes/ahorcado_fin.png"; break;
         }
-            //cargar la imagen correspondiente en el JLabel del imegenahorcado
-                ImageIcon miImagen = new ImageIcon(
+        //cargar la imagen correspondiente en el JLabel del imegenahorcado
+        ImageIcon miImagen = new ImageIcon(
                 new ImageIcon(getClass().getResource(nombreImagen)).getImage()
                         .getScaledInstance(imagenAhorcado.getWidth(),
-                                    imagenAhorcado.getHeight(),
-                                    Image.SCALE_DEFAULT)
-                );
-                imagenAhorcado.setIcon(miImagen);
-        
+                                imagenAhorcado.getHeight(),
+                                Image.SCALE_DEFAULT)
+        );
+        imagenAhorcado.setIcon(miImagen);
+
     
         
+    }
     }
 
     /**
@@ -440,115 +486,115 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void letra_AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_AActionPerformed
-       chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_AActionPerformed
 
     private void letra_A1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A1ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A1ActionPerformed
 
     private void letra_A2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A2ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A2ActionPerformed
 
     private void letra_A3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A3ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A3ActionPerformed
 
     private void letra_A4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A4ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A4ActionPerformed
 
     private void letra_A5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A5ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A5ActionPerformed
 
     private void letra_A6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A6ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A6ActionPerformed
 
     private void letra_A7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A7ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A7ActionPerformed
 
     private void letra_A8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A8ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A8ActionPerformed
 
     private void letra_A9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A9ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A9ActionPerformed
 
     private void letra_A10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A10ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A10ActionPerformed
 
     private void letra_A11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A11ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A11ActionPerformed
 
     private void letra_A12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A12ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A12ActionPerformed
 
     private void letra_A13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A13ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A13ActionPerformed
 
     private void letra_A14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A14ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A14ActionPerformed
 
     private void letra_A15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A15ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A15ActionPerformed
 
     private void letra_A16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A16ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A16ActionPerformed
 
     private void letra_A17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A17ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A17ActionPerformed
 
     private void letra_A18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A18ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A18ActionPerformed
 
     private void letra_A19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A19ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A19ActionPerformed
 
     private void letra_A20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A20ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A20ActionPerformed
 
     private void letra_A21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A21ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A21ActionPerformed
 
     private void letra_A22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A22ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A22ActionPerformed
 
     private void letra_A23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A23ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A23ActionPerformed
 
     private void letra_A24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A24ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A24ActionPerformed
 
     private void letra_A25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A25ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A25ActionPerformed
 
     private void letra_A26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A26ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A26ActionPerformed
 
     private void letra_A27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letra_A27ActionPerformed
-         chequeaBoton((JButton)evt.getSource()); //castear
+        chequeaBoton((JButton) evt.getSource()); //castear
     }//GEN-LAST:event_letra_A27ActionPerformed
 
     /**
@@ -618,4 +664,6 @@ public class VentanaAhorcado extends javax.swing.JFrame {
     private javax.swing.JButton letra_A9;
     private javax.swing.JLabel palabraGuiones;
     // End of variables declaration//GEN-END:variables
+
+
 }
